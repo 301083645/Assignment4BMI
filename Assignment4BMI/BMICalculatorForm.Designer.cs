@@ -46,6 +46,7 @@
             this.WeightGroupBox = new System.Windows.Forms.GroupBox();
             this.kilogramsButton = new System.Windows.Forms.RadioButton();
             this.poundsButton = new System.Windows.Forms.RadioButton();
+            this.BMIprogressBar = new System.Windows.Forms.ProgressBar();
             this.ScreenLayoutPanel1.SuspendLayout();
             this.IorMGroupBox.SuspendLayout();
             this.heightGroupBox.SuspendLayout();
@@ -71,6 +72,7 @@
             this.ScreenLayoutPanel1.Controls.Add(this.IorMGroupBox, 0, 2);
             this.ScreenLayoutPanel1.Controls.Add(this.heightGroupBox, 3, 4);
             this.ScreenLayoutPanel1.Controls.Add(this.WeightGroupBox, 3, 6);
+            this.ScreenLayoutPanel1.Controls.Add(this.BMIprogressBar, 0, 1);
             this.ScreenLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.ScreenLayoutPanel1.Name = "ScreenLayoutPanel1";
             this.ScreenLayoutPanel1.RowCount = 9;
@@ -88,10 +90,10 @@
             // 
             // titleTextBox
             // 
-            this.titleTextBox.BackColor = System.Drawing.Color.Tan;
+            this.titleTextBox.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ScreenLayoutPanel1.SetColumnSpan(this.titleTextBox, 5);
             this.titleTextBox.Enabled = false;
-            this.titleTextBox.ForeColor = System.Drawing.Color.Maroon;
+            this.titleTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.titleTextBox.Location = new System.Drawing.Point(3, 3);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(274, 38);
@@ -167,10 +169,10 @@
             // 
             // ResultTextBox
             // 
-            this.ResultTextBox.BackColor = System.Drawing.Color.Tan;
+            this.ResultTextBox.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ScreenLayoutPanel1.SetColumnSpan(this.ResultTextBox, 5);
             this.ResultTextBox.Enabled = false;
-            this.ResultTextBox.ForeColor = System.Drawing.Color.Maroon;
+            this.ResultTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ResultTextBox.Location = new System.Drawing.Point(3, 339);
             this.ResultTextBox.Multiline = true;
             this.ResultTextBox.Name = "ResultTextBox";
@@ -219,6 +221,7 @@
             this.ImperialButton.Tag = "IorM";
             this.ImperialButton.Text = "Imperial";
             this.ImperialButton.UseVisualStyleBackColor = true;
+            this.ImperialButton.CheckedChanged += new System.EventHandler(this.ImperialButton_CheckedChanged);
             // 
             // MetricButton
             // 
@@ -231,6 +234,7 @@
             this.MetricButton.Tag = "IorM";
             this.MetricButton.Text = "Metric";
             this.MetricButton.UseVisualStyleBackColor = true;
+            this.MetricButton.CheckedChanged += new System.EventHandler(this.MetricButton_CheckedChanged);
             // 
             // heightGroupBox
             // 
@@ -289,7 +293,7 @@
             this.kilogramsButton.AutoSize = true;
             this.kilogramsButton.Checked = true;
             this.kilogramsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kilogramsButton.Location = new System.Drawing.Point(0, 0);
+            this.kilogramsButton.Location = new System.Drawing.Point(55, 0);
             this.kilogramsButton.Name = "kilogramsButton";
             this.kilogramsButton.Size = new System.Drawing.Size(44, 24);
             this.kilogramsButton.TabIndex = 10;
@@ -301,12 +305,23 @@
             // 
             this.poundsButton.AutoSize = true;
             this.poundsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.poundsButton.Location = new System.Drawing.Point(55, 0);
+            this.poundsButton.Location = new System.Drawing.Point(0, 0);
             this.poundsButton.Name = "poundsButton";
             this.poundsButton.Size = new System.Drawing.Size(39, 24);
             this.poundsButton.TabIndex = 11;
             this.poundsButton.Text = "lb";
             this.poundsButton.UseVisualStyleBackColor = true;
+            // 
+            // BMIprogressBar
+            // 
+            this.BMIprogressBar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ScreenLayoutPanel1.SetColumnSpan(this.BMIprogressBar, 5);
+            this.BMIprogressBar.Enabled = false;
+            this.BMIprogressBar.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.BMIprogressBar.Location = new System.Drawing.Point(3, 45);
+            this.BMIprogressBar.Name = "BMIprogressBar";
+            this.BMIprogressBar.Size = new System.Drawing.Size(274, 23);
+            this.BMIprogressBar.TabIndex = 17;
             // 
             // BMI_Calculator
             // 
@@ -354,6 +369,7 @@
         private System.Windows.Forms.GroupBox IorMGroupBox;
         private System.Windows.Forms.GroupBox heightGroupBox;
         private System.Windows.Forms.GroupBox WeightGroupBox;
+        private System.Windows.Forms.ProgressBar BMIprogressBar;
     }
 }
 

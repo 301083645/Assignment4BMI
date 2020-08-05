@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -81,12 +82,48 @@ namespace Assignment4BMI
                 ResultTextBox.Text = "Error!";
             }
 
-            titleTextBox.Text = "Your BMI is " + bmi;
-            
+            result = string.Format("{0:n2}", bmi);
+            titleTextBox.Text = "Your BMI is " +result;
+
+            if(bmi < 18.5)
+            {
+                ResultTextBox.Text = " You are Underweight.";
+                BMIprogressBar.Value = 25;
+            }else if(bmi >= 18.5 && bmi < 25)
+            {
+                ResultTextBox.Text = " You are Normal.";
+                BMIprogressBar.Value = 50;
+            }
+            else if (bmi >= 25 && bmi < 30)
+            {
+                ResultTextBox.Text = " You are Overweight.";
+                BMIprogressBar.Value = 75;
+            }
+            else
+            {
+                ResultTextBox.Text = " You are Obese.";
+                BMIprogressBar.Value = 100;
+            }
+
 
 
         }
 
-        
+        private void ImperialButton_CheckedChanged(object sender, EventArgs e)
+        {
+            poundsButton.Checked = true;
+            kilogramsButton.Checked = false;
+            inchesButton.Checked = true;
+            metresButton.Checked = false;
+
+        }
+
+        private void MetricButton_CheckedChanged(object sender, EventArgs e)
+        {
+            poundsButton.Checked = false;
+            kilogramsButton.Checked = true;
+            inchesButton.Checked = false;
+            metresButton.Checked = true;
+        }
     }
 }
