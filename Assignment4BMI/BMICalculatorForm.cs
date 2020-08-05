@@ -15,21 +15,78 @@ namespace Assignment4BMI
         public BMI_Calculator()
         {
             InitializeComponent();
+            
         }
 
-        private void label1_Click(object sender, EventArgs e)
+       
+
+        private void ResetButton_Click(object sender, EventArgs e)
         {
+            HeightTextBox.Text = "0";
+            WeightTextBox.Text = "0";
+            ResultTextBox.Text = "Result";
+            titleTextBox.Text = "BMI Calculator";
 
+            
+
+            kilogramsButton.Checked = true;
+            poundsButton.Checked = false;
+            inchesButton.Checked = true;
+            metresButton.Checked = false;
+            ImperialButton.Checked = true;
+            MetricButton.Checked = false;
         }
 
-        private void BMI_Calculator_Load(object sender, EventArgs e)
+        private void calculateButton_Click(object sender, EventArgs e)
         {
+            double weight = Convert.ToDouble(WeightTextBox.Text);
+            double height = Convert.ToDouble(HeightTextBox.Text);
+            string result = "";
+            double bmi = 0;
+
+            if (kilogramsButton.Checked)
+            {
+                if (metresButton.Checked)
+                {
+                    bmi = weight / (height * height);
+
+                }else if (inchesButton.Checked)
+                {
+                    height = height * 0.0254;
+                    bmi = weight / (height * height);
+                }
+                else
+                {
+                    bmi = 0;
+                }
+            }
+            else if (poundsButton.Checked)
+            {
+                if (metresButton.Checked)
+                {
+                    height = height * 39.37;
+                    bmi = weight * 703 / (height * height);
+                }
+                else if (inchesButton.Checked)
+                {
+                    bmi = weight * 703 / (height * height);
+                }
+                else
+                {
+                    bmi = 0;
+                }
+            }
+            else
+            {
+                ResultTextBox.Text = "Error!";
+            }
+
+            titleTextBox.Text = "Your BMI is " + bmi;
+            
+
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
