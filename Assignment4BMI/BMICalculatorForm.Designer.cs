@@ -295,24 +295,24 @@
             // kilogramsButton
             // 
             this.kilogramsButton.AutoSize = true;
-            this.kilogramsButton.Checked = true;
             this.kilogramsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kilogramsButton.Location = new System.Drawing.Point(55, 0);
             this.kilogramsButton.Name = "kilogramsButton";
             this.kilogramsButton.Size = new System.Drawing.Size(44, 24);
             this.kilogramsButton.TabIndex = 10;
-            this.kilogramsButton.TabStop = true;
             this.kilogramsButton.Text = "kg";
             this.kilogramsButton.UseVisualStyleBackColor = true;
             // 
             // poundsButton
             // 
             this.poundsButton.AutoSize = true;
+            this.poundsButton.Checked = true;
             this.poundsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.poundsButton.Location = new System.Drawing.Point(0, 0);
             this.poundsButton.Name = "poundsButton";
             this.poundsButton.Size = new System.Drawing.Size(39, 24);
             this.poundsButton.TabIndex = 11;
+            this.poundsButton.TabStop = true;
             this.poundsButton.Text = "lb";
             this.poundsButton.UseVisualStyleBackColor = true;
             // 
