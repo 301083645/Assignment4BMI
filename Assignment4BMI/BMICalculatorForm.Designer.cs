@@ -91,12 +91,13 @@
             // titleTextBox
             // 
             this.titleTextBox.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.titleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ScreenLayoutPanel1.SetColumnSpan(this.titleTextBox, 5);
             this.titleTextBox.Enabled = false;
-            this.titleTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.titleTextBox.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.titleTextBox.Location = new System.Drawing.Point(3, 3);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(274, 38);
+            this.titleTextBox.Size = new System.Drawing.Size(274, 31);
             this.titleTextBox.TabIndex = 0;
             this.titleTextBox.Text = "BMI Calculator";
             this.titleTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -141,6 +142,7 @@
             this.WeightTextBox.Size = new System.Drawing.Size(106, 29);
             this.WeightTextBox.TabIndex = 6;
             this.WeightTextBox.Text = "0";
+            this.WeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WeightTextBox_KeyPress);
             // 
             // calculateButton
             // 
@@ -166,13 +168,15 @@
             this.HeightTextBox.Size = new System.Drawing.Size(106, 29);
             this.HeightTextBox.TabIndex = 4;
             this.HeightTextBox.Text = "0";
+            this.HeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HeightTextBox_KeyPress);
             // 
             // ResultTextBox
             // 
             this.ResultTextBox.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ResultTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ScreenLayoutPanel1.SetColumnSpan(this.ResultTextBox, 5);
             this.ResultTextBox.Enabled = false;
-            this.ResultTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ResultTextBox.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.ResultTextBox.Location = new System.Drawing.Point(3, 339);
             this.ResultTextBox.Multiline = true;
             this.ResultTextBox.Name = "ResultTextBox";
@@ -322,6 +326,7 @@
             this.BMIprogressBar.Name = "BMIprogressBar";
             this.BMIprogressBar.Size = new System.Drawing.Size(274, 23);
             this.BMIprogressBar.TabIndex = 17;
+            this.BMIprogressBar.Visible = false;
             // 
             // BMI_Calculator
             // 
